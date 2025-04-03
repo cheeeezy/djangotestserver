@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEX Volume on {{ chain }}</title>
+    <title>DeFi Volume Dashboard</title>
     <style>
-        body {
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
             font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
             text-align: center;
-            margin-top: 50px;
-            background-color: #f4f4f9;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        th {
+            background-color: #f2f2f2;
         }
-        h1 {
-            color: #2c3e50;
-        }
-        .volume {
-            font-size: 1.5em;
-            color: #34495e;
-            margin: 10px 0;
-        }
-        .label {
-            font-weight: bold;
-            color: #7f8c8d;
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DEX Trading Volume on(sgfs) {{ chain }}</h1>
-        <div class="volume">
-            <span class="label">24-Hour Volume:</span> {{ total_24h }}
-        </div>
-        <div class="volume">
-            <span class="label">30-Day Volume:</span> {{ total_30d }}
-        </div>
-    </div>
+    <h1 style="text-align: center;">DeFi Volume Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Chain</th>
+                <th>Total 24h Volume</th>
+                <th>Total 30d Volume</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for chain, data in chain_data.items %}
+            <tr>
+                <td>{{ chain }}</td>
+                <td>{{ data.total_24h }}</td>
+                <td>{{ data.total_30d }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
-</html>
+</html>>
