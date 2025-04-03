@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from dex_app.views import home
 from orders.views import orders_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', orders_page)
+    path('', orders_page),
+    path('home/', home, name='home')
 ]
 
