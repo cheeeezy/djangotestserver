@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'orders',
     'products',
     'dex_app',
+    'wallet',
 ]
 
 MIDDLEWARE = [

@@ -19,10 +19,13 @@ from django.urls import path
 
 from dex_app.views import home
 from orders.views import orders_page
+from wallet import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', orders_page),
-    path('home/', home, name='home')
+    path('home/', home, name='home'),
+    path('wallet/', views.wallet_view, name='wallet'),  # Новая страница для кошелька
+
 ]
 
