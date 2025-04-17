@@ -5,7 +5,7 @@ from django.core.cache import cache
 
 logger = logging.getLogger(__name__)
 
-SUPPORTED_CHAINS = ["Base", "Ethereum", "Arbitrum", "Solana"]
+SUPPORTED_CHAINS = ["Base", "Ethereum", "Arbitrum", "Solana", 'Berachain']
 
 
 def get_dex_volume(chain):
